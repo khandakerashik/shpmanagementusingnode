@@ -17,7 +17,7 @@ app.use(bodyParse.urlencoded({extended:false}));
 app.use(exSession({secret:"value", saveUninitialized:true, resave:false}));
 app.use(cookieParser());
 app.use('/admin', admin);
-app.use('employee', employee);
+app.use('/employees', employee);
 app.use('/login', login);
 app.use('/logout', logout);
 
