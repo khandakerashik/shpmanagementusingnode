@@ -4,6 +4,10 @@ var ejs  		= require('ejs');
 var bodyParse  	= require('body-parser');
 var exSession  	= require('express-session');
 var cookieParser= require('cookie-parser');
+// var home  		= require('./controllers/home');
+// var user  		= require('./controllers/user');
+// var login  		= require('./controllers/login');
+// var logout  	= require('./controllers/logout');
 var app 		= express();
 
 
@@ -12,8 +16,8 @@ app.set('view engine', 'ejs');
 app.use(bodyParse.urlencoded({extended:false}));
 app.use(exSession({secret:"value", saveUninitialized:true, resave:false}));
 app.use(cookieParser());
-app.use('/home', home);
-app.use('/user', user);
+app.use('/admin', admin);
+app.use('employee', employee);
 app.use('/login', login);
 app.use('/logout', logout);
 
